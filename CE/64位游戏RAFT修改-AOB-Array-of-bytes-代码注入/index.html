@@ -23,7 +23,7 @@
 <meta name="description" content="物品栏地址寻找首先通过常规的变量操作来寻找到1个物品栏的地址  我们知道这种普通的地址是动态分配的内存，重新进入游戏就会失效，但64位游戏下是8字节指针，通常都有10级以上的偏移，常规的广度搜索和指针扫描都很难找到进程相关的基址偏移，所以我们可以通过aob注入代码片段的方式修改游戏本身的代码 寻找修改物品栏数量的代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能">
-<meta property="og:url" content="http://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:url" content="https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Xlong">
 <meta property="og:description" content="物品栏地址寻找首先通过常规的变量操作来寻找到1个物品栏的地址  我们知道这种普通的地址是动态分配的内存，重新进入游戏就会失效，但64位游戏下是8字节指针，通常都有10级以上的偏移，常规的广度搜索和指针扫描都很难找到进程相关的基址偏移，所以我们可以通过aob注入代码片段的方式修改游戏本身的代码 寻找修改物品栏数量的代码">
 <meta property="og:locale" content="zh_CN">
@@ -45,11 +45,11 @@
 <meta name="twitter:image" content="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125135250247.png">
 
 
-<link rel="canonical" href="http://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
+<link rel="canonical" href="https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/","path":"CE/64位游戏RAFT修改-AOB-Array-of-bytes-代码注入/","title":"64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/","path":"CE/64位游戏RAFT修改-AOB-Array-of-bytes-代码注入/","title":"64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能 | Xlong</title>
@@ -211,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
