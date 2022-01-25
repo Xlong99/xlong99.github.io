@@ -8,7 +8,18 @@ document.addEventListener("pjax:success", initScrollReveal);
 </script><link rel="icon" type="image/png" href="/images/16.ico"><link rel="mask-icon" href="/images/16.ico" color="#0078E7"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
     const Yun = window.Yun || {};
     window.CONFIG = {"hostname":"blog.xlong.xyz","root":"/","title":"晓龙的小站","version":"1.7.0","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
-  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><meta name="description" content="物品栏地址寻找首先通过常规的变量操作来寻找到1个物品栏的地址  我们知道这种普通的地址是动态分配的内存，重新进入游戏就会失效，但64位游戏下是8字节指针，通常都有10级以上的偏移，常规的广度搜索和指针扫描都很难找到进程相关的基址偏移，所以我们可以通过aob注入代码片段的方式修改游戏本身的代码 寻找修改物品栏数量的代码">
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><meta name="description" content="物品栏地址寻找首先通过常规的变量操作来寻找到1个物品栏的地址  我们知道这种普通的地址是动态分配的内存，重新进入游戏就会失效，但64位游戏下是8字节指针，通常都有10级以上的偏移，常规的广度搜索和指针扫描都很难找到进程相关的基址偏移，所以我们可以通过aob注入代码片段的方式修改游戏本身的代码 寻找修改物品栏数量的代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能">
 <meta property="og:url" content="https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5.html">
@@ -58,7 +69,7 @@ document.addEventListener("pjax:success", initScrollReveal);
 <p>这下效果令人满意了，收工</p>
 <p><img src="https://img1.imgtp.com/2022/01/25/G9BnUj1W.gif" alt="213123123" loading="lazy"></p>
 </div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>Xlong99</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5.html" title="64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能">https://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5.html</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>要不要和我说些什么？</span><br></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
-  const valineConfig = {"enable":true,"appId":null,"appKey":null,"placeholder":"ヾﾉ≧∀≦)o来啊，快活啊!","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"appid":"g7dmKg3Ul2S2x6Kpgs3jMadf-gzGzoHsz","appkey":"eBTYUKTrBJC8dgYU20Ln0IwI","guest_info":"nick,mail,link","serverURLs":"https://blog.xlong.xyz","el":"#valine-container","lang":"zh-cn"}
+  const valineConfig = {"enable":true,"appId":null,"appKey":null,"placeholder":"ヾﾉ≧∀≦)o来啊，快活啊!","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"appid":"g7dmKg3Ul2S2x6Kpgs3jMadf-gzGzoHsz","appkey":"eBTYUKTrBJC8dgYU20Ln0IwI","el":"#valine-container","lang":"zh-cn"}
   valineConfig.path = "/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5.html"
   new Valine(valineConfig)
 }, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">晋ICP备20007266号</a></div><div class="copyright"><span>&copy; 2019 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> Xlong99</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.7.0</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
