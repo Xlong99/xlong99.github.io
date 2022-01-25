@@ -54,7 +54,38 @@ document.addEventListener("pjax:success", initScrollReveal);
 <p>搜索2A4128D52F2和2A4128D52F5地址存储的汇编指令对应的字节数组，可以看出全局唯一，可以通过特征码定位到代码段</p>
 <p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125140055522.png" alt="image-20220125140055522" loading="lazy"></p>
 <p>编写aob注入脚本，使物品格子固定写入20</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[ENABLE]</span><br><span class="line"></span><br><span class="line">aobscan(INJECT,89 48 60 48 8D 65 00) // 根据唯一特征码定位代码段</span><br><span class="line">alloc(newmem,$1000,INJECT)//申请内存</span><br><span class="line"></span><br><span class="line">label(code)</span><br><span class="line">label(return)</span><br><span class="line">//前置切面</span><br><span class="line">newmem:</span><br><span class="line">  mov [rax+60],14//固定写入十六进制14，也就是十进制的20</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return//返回</span><br><span class="line">//原代码段</span><br><span class="line">//保留，用于之后排查问题</span><br><span class="line">code:</span><br><span class="line">  mov [rax+60],ecx</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line"></span><br><span class="line">INJECT:</span><br><span class="line">  jmp newmem</span><br><span class="line">  nop 2</span><br><span class="line">return:</span><br><span class="line">registersymbol(INJECT)</span><br><span class="line"></span><br><span class="line">[DISABLE]</span><br><span class="line"></span><br><span class="line">INJECT:</span><br><span class="line">  db 89 48 60 48 8D 65 00</span><br><span class="line"></span><br><span class="line">unregistersymbol(INJECT)</span><br><span class="line">dealloc(newmem)</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">[ENABLE]
+
+aobscan(INJECT,89 48 60 48 8D 65 00) &#x2F;&#x2F; 根据唯一特征码定位代码段
+alloc(newmem,$1000,INJECT)&#x2F;&#x2F;申请内存
+
+label(code)
+label(return)
+&#x2F;&#x2F;前置切面
+newmem:
+  mov [rax+60],14&#x2F;&#x2F;固定写入十六进制14，也就是十进制的20
+  lea rsp,[rbp+00]
+  jmp return&#x2F;&#x2F;返回
+&#x2F;&#x2F;原代码段
+&#x2F;&#x2F;保留，用于之后排查问题
+code:
+  mov [rax+60],ecx
+  lea rsp,[rbp+00]
+  jmp return
+
+INJECT:
+  jmp newmem
+  nop 2
+return:
+registersymbol(INJECT)
+
+[DISABLE]
+
+INJECT:
+  db 89 48 60 48 8D 65 00
+
+unregistersymbol(INJECT)
+dealloc(newmem)</code></pre>
 
 <p>测试，成功，每次拖动物品，都会将物品数量变成20</p>
 <p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/raft.gif" alt="raft" loading="lazy"></p>
@@ -64,7 +95,17 @@ document.addEventListener("pjax:success", initScrollReveal);
 <p>1.将原来的物品栏数量置为0,</p>
 <p>2.给目标物品栏数量赋值</p>
 <p>所以，要想解决这个小毛病，只需要在他置为0的时候，不修改代码的逻辑即可，修改代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">newmem:</span><br><span class="line">  cmp ecx,0//如果为0，则执行原来的代码</span><br><span class="line">  je code</span><br><span class="line">  mov [rax+60],14</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line">code:</span><br><span class="line">  mov [rax+60],ecx</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">newmem:
+  cmp ecx,0&#x2F;&#x2F;如果为0，则执行原来的代码
+  je code
+  mov [rax+60],14
+  lea rsp,[rbp+00]
+  jmp return
+code:
+  mov [rax+60],ecx
+  lea rsp,[rbp+00]
+  jmp return
+</code></pre>
 
 <p>这下效果令人满意了，收工</p>
 <p><img src="https://img1.imgtp.com/2022/01/25/G9BnUj1W.gif" alt="213123123" loading="lazy"></p>
