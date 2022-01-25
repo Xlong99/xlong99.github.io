@@ -85,8 +85,8 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">0</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">0</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">1</span></a></li>
         <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">1</span></a></li>
   </ul>
 </nav>
@@ -135,6 +135,16 @@
           <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -185,7 +195,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://blog.xlong.xyz/uncategorized/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="http://blog.xlong.xyz/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -198,7 +208,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/uncategorized/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能</a>
+          <a href="/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">64位游戏RAFT修改-AOB(Array of bytes)代码注入无限物品功能</a>
         </h2>
 
         <div class="post-meta-container">
@@ -210,7 +220,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-01-25 13:49:03 / 修改时间：14:50:09" itemprop="dateCreated datePublished" datetime="2022-01-25T13:49:03+08:00">2022-01-25</time>
+      <time title="创建时间：2022-01-25 13:49:03 / 修改时间：14:53:42" itemprop="dateCreated datePublished" datetime="2022-01-25T13:49:03+08:00">2022-01-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/CE/" itemprop="url" rel="index"><span itemprop="name">CE</span></a>
+        </span>
     </span>
 
   
@@ -226,30 +245,15 @@
           <h2 id="物品栏地址寻找"><a href="#物品栏地址寻找" class="headerlink" title="物品栏地址寻找"></a>物品栏地址寻找</h2><p>首先通过常规的变量操作来寻找到物品栏1的地址</p>
 <p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125135250247.png" alt="image-20220125135250247"></p>
 <p>我们知道这种普通的地址是<strong>动态分配</strong>的内存，重新进入游戏就会失效，但<strong>64位</strong>游戏下是<strong>8字节</strong>指针，通常都有10级以上的偏移，常规的广度搜索和指针扫描都很难找到基址偏移，所以我们可以通过aob注入代码片段的方式修改游戏本身的代码</p>
-<h2 id="寻找修改物品栏数量的代码"><a href="#寻找修改物品栏数量的代码" class="headerlink" title="寻找修改物品栏数量的代码"></a>寻找修改物品栏数量的代码</h2><p>右键-找出是什么改写了这个地址-显示反汇编程序</p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125135715948.png" alt="image-20220125135715948"></p>
-<p>这条指令给rax寄存器下地址+60偏移的属性赋值了ecx寄存器的值，找出指令访问的地址，然后移动别的格子</p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125135815327.png" alt="image-20220125135815327"></p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125135839171.png" alt="image-20220125135839171"></p>
-<p>可以看出都有变化，可以得出所有物品栏数量赋值都使用了这段<strong>共用代码</strong></p>
-<p>搜索2A4128D52F2和2A4128D52F5地址存储的汇编指令对应的字节数组，可以看出全局唯一，可以通过特征码定位到代码段</p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125140055522.png" alt="image-20220125140055522"></p>
-<p>编写aob注入脚本，使物品格子固定写入20</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[ENABLE]</span><br><span class="line"></span><br><span class="line">aobscan(INJECT,89 48 60 48 8D 65 00) // 根据唯一特征码定位代码段</span><br><span class="line">alloc(newmem,$1000,INJECT)//申请内存</span><br><span class="line"></span><br><span class="line">label(code)</span><br><span class="line">label(return)</span><br><span class="line">//前置切面</span><br><span class="line">newmem:</span><br><span class="line">  mov [rax+60],14//固定写入十六进制14，也就是十进制的20</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return//返回</span><br><span class="line">//原代码段</span><br><span class="line">//保留，用于之后排查问题</span><br><span class="line">code:</span><br><span class="line">  mov [rax+60],ecx</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line"></span><br><span class="line">INJECT:</span><br><span class="line">  jmp newmem</span><br><span class="line">  nop 2</span><br><span class="line">return:</span><br><span class="line">registersymbol(INJECT)</span><br><span class="line"></span><br><span class="line">[DISABLE]</span><br><span class="line"></span><br><span class="line">INJECT:</span><br><span class="line">  db 89 48 60 48 8D 65 00</span><br><span class="line"></span><br><span class="line">unregistersymbol(INJECT)</span><br><span class="line">dealloc(newmem)</span><br></pre></td></tr></table></figure>
-
-<p>测试，成功，每次拖动物品，都会将物品数量变成20</p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/raft.gif" alt="raft"></p>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>从之前修改的效果看，左键拖动物品时候会将原来的格子和目标格子都变成20，影响到我们正常的物品移动了，恢复代码。查看访问这行代码的地址，移动一次物品</p>
-<p><img src="https://gitee.com/xlong99/xlongpic/raw/master/img/image-20220125143319176.png" alt="image-20220125143319176"></p>
-<p>可以推断，一次物品的移动，分为两个步骤</p>
-<p>1.将原来的物品栏数量置为0,</p>
-<p>2.给目标物品栏数量赋值</p>
-<p>所以，要想解决这个小毛病，只需要在他置为0的时候，不修改代码的逻辑即可，修改代码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">newmem:</span><br><span class="line">  cmp ecx,0//如果为0，则执行原来的代码</span><br><span class="line">  je code</span><br><span class="line">  mov [rax+60],14</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line">code:</span><br><span class="line">  mov [rax+60],ecx</span><br><span class="line">  lea rsp,[rbp+00]</span><br><span class="line">  jmp return</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>这下效果令人满意了，收工</p>
-<p><img src="https://img1.imgtp.com/2022/01/25/G9BnUj1W.gif" alt="213123123"></p>
-
+<h2 id="寻找修改物品栏数量的代码"><a href="#寻找修改物品栏数量的代码" class="headerlink" title="寻找修改物品栏数量的代码"></a>寻找修改物品栏数量的代码</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/CE/64%E4%BD%8D%E6%B8%B8%E6%88%8FRAFT%E4%BF%AE%E6%94%B9-AOB-Array-of-bytes-%E4%BB%A3%E7%A0%81%E6%B3%A8%E5%85%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
