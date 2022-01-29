@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.xlong.xyz/CE/FPS%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91-%E8%A7%86%E8%A7%92%E7%9F%A9%E9%98%B5%E5%92%8C%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87.html</loc>
+    <loc>https://blog.xlong.xyz/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81.html</loc>
     
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.xlong.xyz/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81.html</loc>
+    <loc>https://blog.xlong.xyz/CE/FPS%E6%B8%B8%E6%88%8F%E9%80%86%E5%90%91-%E8%A7%86%E8%A7%92%E7%9F%A9%E9%98%B5%E5%92%8C%E4%B8%96%E7%95%8C%E5%9D%90%E6%A0%87.html</loc>
     
     <lastmod>2022-01-28</lastmod>
     
@@ -85,7 +85,7 @@
 
   <url>
     <loc>https://blog.xlong.xyz/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,28 +93,28 @@
   
   <url>
     <loc>https://blog.xlong.xyz/tags/CE/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xlong.xyz/tags/%E4%BF%AE%E6%94%B9%E5%99%A8/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xlong.xyz/tags/AOB%E6%B3%A8%E5%85%A5/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xlong.xyz/tags/FPS/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -123,14 +123,14 @@
   
   <url>
     <loc>https://blog.xlong.xyz/categories/CE/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.xlong.xyz/categories/%E9%80%86%E5%90%91/</loc>
-    <lastmod>2022-01-28</lastmod>
+    <lastmod>2022-01-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
