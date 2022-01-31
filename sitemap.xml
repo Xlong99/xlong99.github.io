@@ -13,7 +13,7 @@
   <url>
     <loc>https://blog.xlong.xyz/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81.html</loc>
     
-    <lastmod>2022-01-30</lastmod>
+    <lastmod>2022-01-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -101,6 +101,20 @@
 
   
   <url>
+    <loc>https://blog.xlong.xyz/tags/C/</loc>
+    <lastmod>2022-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xlong.xyz/tags/%E9%80%86%E5%90%91/</loc>
+    <lastmod>2022-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xlong.xyz/tags/CE/</loc>
     <lastmod>2022-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -128,31 +142,17 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://blog.xlong.xyz/tags/C/</loc>
-    <lastmod>2022-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.xlong.xyz/tags/%E9%80%86%E5%90%91/</loc>
-    <lastmod>2022-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
-    <loc>https://blog.xlong.xyz/categories/CE/</loc>
+    <loc>https://blog.xlong.xyz/categories/%E9%80%86%E5%90%91/</loc>
     <lastmod>2022-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.xlong.xyz/categories/%E9%80%86%E5%90%91/</loc>
+    <loc>https://blog.xlong.xyz/categories/CE/</loc>
     <lastmod>2022-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
