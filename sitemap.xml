@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.xlong.xyz/C++/AssaultCube%E5%A4%96%E9%83%A8%E4%BD%9C%E5%BC%8A%E5%99%A8-%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98.html</loc>
+    <loc>https://blog.xlong.xyz/C++/AssaultCube%E4%BD%9C%E5%BC%8A%E5%99%A8-%E6%B3%A8%E5%85%A5dll.html</loc>
     
     <lastmod>2022-02-01</lastmod>
     
@@ -13,7 +13,16 @@
   <url>
     <loc>https://blog.xlong.xyz/%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81.html</loc>
     
-    <lastmod>2022-01-31</lastmod>
+    <lastmod>2022-02-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xlong.xyz/C++/AssaultCube%E5%A4%96%E9%83%A8%E4%BD%9C%E5%BC%8A%E5%99%A8-%E8%AF%BB%E5%86%99%E5%86%85%E5%AD%98.html</loc>
+    
+    <lastmod>2022-02-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -137,6 +146,13 @@
   
   <url>
     <loc>https://blog.xlong.xyz/tags/FPS/</loc>
+    <lastmod>2022-02-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xlong.xyz/tags/c/</loc>
     <lastmod>2022-02-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
