@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.xlong.xyz/C++/hook.html</loc>
+    <lastmod>2022-03-02</lastmod>
+  </url>
+  <url>
     <loc>https://blog.xlong.xyz/C++/%E7%BB%98%E5%88%B6%E5%87%BD%E6%95%B0.html</loc>
     <lastmod>2022-03-02</lastmod>
   </url>
