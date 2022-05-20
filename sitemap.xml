@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.xlong.xyz/GO/Golang-GC.html</loc>
+    
+    <lastmod>2022-05-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.xlong.xyz/windows/PE%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F.html</loc>
     
     <lastmod>2022-03-10</lastmod>
@@ -208,6 +217,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://blog.xlong.xyz/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -233,6 +249,13 @@
   
   <url>
     <loc>https://blog.xlong.xyz/categories/windows/</loc>
+    <lastmod>2022-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.xlong.xyz/categories/Golang/</loc>
     <lastmod>2022-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
